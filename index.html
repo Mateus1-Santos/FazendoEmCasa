@@ -8,6 +8,7 @@
     <meta name= "description" content="Um quiz interativo para lhe intreter"> <!-- descricao do site -->
     <meta name="keywords" content="textos, testes, html, css"> <!-- palavras chaves para motores de busca -->
     <meta name="author" content="Mateus Santos Motta"> <!-- autor do site -->
+    <link rel="stylesheet" href="style.css">
     <title>Quiz Para jogadores</title>
 </head>
 
@@ -17,12 +18,158 @@
         <p>Teste seus conhecimentos em programação com este quiz interativo!</p>
     </header>
     <main>
+        <!--Introdução-->
         <section>
             <h2>Sobre esse Quiz</h2>
-            <p>Este Quiz foi desenvolvido para testar seus conhecimentos em programação, como linguagens de programação, conceitos basicos e muito mais!</p>
-            <p>Você encontrará diferentes tipos de perguntas, incluindo os de multipla escolhas, textos e perguntas de data. Desafie-se com este quiz!</p>
-            <p>Você podera encontar alguns acrônimos como HTML e CSS, que são comumente usados em questões relacionadas ao desenvolvimento web</p>
+            <p>Este Quiz foi <strong>desenvolvido</strong> para testar seus conhecimentos em programação, como linguagens de programação, conceitos basicos e muito mais!</p>
+            <p>Você encontrará diferentes tipos de perguntas, incluindo os de multipla escolhas, textos e perguntas de data. <br>Desafie-se com este quiz!</p>
+            <p>Você podera encontar alguns acrônimos como <abbr title="HyperText Markup Languages">HTML</abbr> e <abbr title="Cascading Style Sheets">CSS</abbr>, que são comumente usados em questões relacionadas ao desenvolvimento web</p>
+        </section>
+        <!--Pergunta 1: Multipla escolha-->
+        <section>
+            <h2>Pergunta 1: Qual linguagem é usada para estruturar páginas web?</h2>
+            <form>
+                <input type="radio"value="Python" id="p1a" name="Pergunta1">
+                <label for="p1a">Python</label>
+                <input type="radio"value="HTML" id="p1b" name="Pergunta1">
+                <label for="p1b">HTML</label>
+                <input type="radio"value="JavaScript" id="p1c" name="Pergunta1">
+                <label for="p1a">JavaScript</label>
+                <input type="radio"value="CSS" id="p1d" name="Pergunta1">
+                <label for="p1a">CSS</label>
+            </form>    
+        </section>
+        <!--Pergunta 2: Texto-->
+        <section>
+            <h2>Pergunta 2: Na URL https://www.google.com o trecho "google.com" é o ______</h2>
+            <form>
+                <input type="text" id="p2" name="Pergunta2" placeholder="Digite sua resposta aqui">
+            </form>
+        </section>
+        <!--Pergunta 3: Senha-->
+        <section>
+            <h2>Pergunta 4: Escreva um exemplo de senha forte</h2>
+            <form><input type="password" id="p3" name="pergunta3" placeholder="Digite uma senha..."></form>
+
+        </section>
+        <!--Pergunta 4: Data-->
+        <section>
+            <h2>Em que ano foi HTML lançou na sua primeira versão?</h2>
+            <form>
+                <input type="date" id="p4" name="pergunta4">
+            </form>
+        </section>
+        <!--Pergunta 5: Seleção Multipla-->
+        <section>
+            <h2>Pergunta 5: Quais dessas tecnologias são consideradas linguagens de programação?</h2>
+            <form>
+                <input type="checkbox" id="p5a" name="pergunta5" value="JavaScript">
+                <label for="p5a">JavaScript</label>
+                <input type="checkbox" id="p5b" name="pergunta5" value="Java">
+                <label for="p5a">Java</label>
+                <input type="checkbox" id="p5c" name="pergunta5" value="HTML">
+                <label for="p5a">HTML</label>
+                <input type="checkbox" id="p5d" name="pergunta5" value="CSS">
+                <label for="p5a">CSS</label>
+            </form>
+        </section>
+        <!--Pergunta 6: Upload de arquivo-->
+        <section>
+            <h2>Pergunta 6: Faça o upload de um arquivo contendo códig Html</h2>
+            <form>
+                <input type="file" id="p6" name="pergunta6" accept=".html">
+            </form>
+        </section>
+        <!--Pergunta 7: menu suspenso-->
+        <section>
+            <h2>Pergunta 7: Selecione o atributo do input que definiu o seu tipo:</h2>
+            <select name="pergunta7" id="p7">
+                <option value="id">id</option>
+                <option value="type">type</option>
+                <option value="placeholder">placeholder</option>
+                <option value="name">name</option>
+            </select>
+        </section>
+        <!--Pergunta 8: Imagens-->
+        <section>
+            <h2>Pergunta 8: Qual linguagem de programação é representada pelo logotipo abaixo?</h2>
+            <figure>
+                <img src="java.jpg" alt="logotipo de uma linguagem de programação" width="200"><br>
+                <figcaption>Logotipo de uma linguagem de programação</figcaption>
+             </figure>
+            <input type="text" name="pergunta8" id=" p8" placeholder="Digite sua resposta aqui...">
+        </section><br>
+        <!--Tabela de classificação-->
+        <section>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Pontuação</th>
+                        <th>Avaliação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0-2</td>
+                        <td>Não Desista! Você ainda consegue melhorar essa pontuação!</td>
+                    </tr>
+                    <tr>
+                        <td>3-4</td>
+                        <td>Você ainda precisa melhorar. Que tal estudar mais sobre programação?</td>
+                    </tr>
+                    <tr>
+                        <td>5-7</td>
+                        <td>Bom! Seu conhecimento em programação esta satisfatorio!</td>
+                    </tr>
+                    <tr>
+                        <td>8-10</td>
+                        <td>Perfeito! Você esta sabendo muito de programação.</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Obrigado por participar do quiz!</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        <!--Respostas-->
+        <section>
+            <h2>Verifique suas respostas</h2>
+            <details>
+                <summary>Clique aqui para ver as respostas</summary>
+            <ol>
+                <li>HTML</li>
+                <li>Dominio</li>
+                <li>Ab123!kaoAmd#</li>
+                <li>1991</li>
+                <li>JavaScript, Java</li>
+                <li>arquivo deve ter extensão .HTML</li>
+                <li>type</li>
+                <li>Java</li>
+            </ol>
+            </details>
+        </section>
+        <!--Formulario de feedback-->
+        <section>
+            <h2>Nos de seu feedback</h2>
+            <form>
+                <legend>Informações de contato</legend>
+                <fieldset>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Seu email"><br>
+                    <label for="comments"></label>
+                    <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Deixe seu comentário aqui..."></textarea><br>
+                    <button onclick="alert('Feedback enviado com sucesso!')">Envie feedback</button>
+                </fieldset>    
+            </form>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        <p>&copy; Quiz para programadores. Todos os dirteitos reservados</p>
+        <p>Para conchecer outros quizzes <a href="https://google.com" target="_blank">clique aqui</a></p>
+        <p>&gt; Feito por: Mateus Santos Motta</p>
+    </footer>
 </body>

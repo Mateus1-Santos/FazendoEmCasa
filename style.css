@@ -1,0 +1,226 @@
+/* Variáveis */
+:root{
+    --bg:#0f1724;             /* fundo geral */
+    --card:#0b1220;           /* fundo seções */
+    --muted:#9aa4b2;
+    --accent:#00b4d8;         /* azul claro */
+    --accent-2:#7c3aed;       /* roxo */
+    --surface:#0f1724;
+    --glass: rgba(255,255,255,0.03);
+    --success:#16a34a;
+    --danger:#ef4444;
+    --text:#e6eef6;
+    --radius:12px;
+    --fw-regular: 400;
+    --fw-medium: 600;
+    --fw-bold: 700;
+    --max-width: 1100px;
+    --gap:18px;
+    --shadow: 0 6px 18px rgba(2,6,23,0.6);
+    font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Reset simples */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+    margin:0;
+    background: linear-gradient(180deg,#071124 0%, var(--bg) 100%);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    font-family:var(--font-family, Inter, system-ui, -apple-system);
+    line-height:1.45;
+    padding:32px 16px;
+}
+
+/* Container central */
+main{
+    max-width:var(--max-width);
+    margin:20px auto;
+    display:block;
+}
+
+/* Header */
+header{
+    max-width:var(--max-width);
+    margin:0 auto 18px;
+    padding:22px;
+    background:linear-gradient(90deg, rgba(12,18,35,0.6), rgba(8,12,20,0.35));
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    border:1px solid rgba(255,255,255,0.02);
+}
+header h1{
+    margin:0 0 6px;
+    font-size:1.6rem;
+    letter-spacing:0.2px;
+    font-weight:var(--fw-bold);
+}
+header p{margin:0;color:var(--muted)}
+
+/* Sections (cartões) */
+section{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    margin:var(--gap) 0;
+    padding:20px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 8px 30px rgba(2,6,23,0.45);
+}
+section h2{
+    margin:0 0 10px;
+    font-size:1.05rem;
+    color:var(--text);
+}
+
+/* Forms - layout consistente */
+form{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    align-items:center;
+}
+label{
+    color:var(--muted);
+    font-size:0.95rem;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="file"],
+textarea,
+select{
+    background:var(--surface);
+    border:1px solid rgba(255,255,255,0.04);
+    color:var(--text);
+    padding:10px 12px;
+    border-radius:8px;
+    outline:none;
+    min-width:220px;
+    transition:box-shadow .18s, transform .12s, border-color .12s;
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder{
+    color:rgba(255,255,255,0.35);
+}
+
+/* foco */
+input:focus, textarea:focus, select:focus{
+    box-shadow: 0 6px 20px rgba(0,180,216,0.12);
+    border-color:var(--accent);
+    transform:translateY(-1px);
+}
+
+/* Radio / checkbox — alinhamento e espaçamento */
+.form-row{display:flex;gap:12px;align-items:center}
+input[type="radio"], input[type="checkbox"]{
+    width:18px;
+    height:18px;
+    accent-color:var(--accent);
+    margin-right:8px;
+    vertical-align:middle;
+}
+
+/* Labels para opções ficam clicáveis e mais legíveis */
+input[type="radio"] + label,
+input[type="checkbox"] + label{
+    margin-right:16px;
+    cursor:pointer;
+    color:var(--text);
+}
+
+/* Figura / imagem */
+figure{
+    margin:0;
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+figure img{
+    max-width:200px;
+    height:auto;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 8px 24px rgba(2,6,23,0.55);
+}
+
+/* Botões */
+button{
+    background: linear-gradient(90deg,var(--accent),var(--accent-2));
+    color:#042028;
+    border:none;
+    padding:10px 14px;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+    transition: transform .12s ease, box-shadow .12s;
+    box-shadow: 0 8px 20px rgba(124,58,237,0.12);
+}
+button:hover{ transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.35) }
+button:active{ transform: translateY(0) }
+
+/* Tabela classificatória */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:transparent;
+    overflow:hidden;
+    border-radius:8px;
+    color:var(--text);
+}
+th, td{
+    padding:12px 10px;
+    text-align:left;
+    border-bottom:1px solid rgba(255,255,255,0.03);
+    font-size:0.95rem;
+}
+thead th{
+    background:linear-gradient(90deg, rgba(0,0,0,0.06), rgba(255,255,255,0.01));
+    font-weight:700;
+}
+tbody tr:nth-child(odd){ background: rgba(255,255,255,0.01) }
+tfoot td{ font-weight:600; color:var(--muted) }
+
+/* Details/summary */
+details{ background:var(--glass); padding:12px; border-radius:8px }
+summary{ cursor:pointer; color:var(--accent); font-weight:600 }
+
+/* Footer */
+footer{
+    max-width:var(--max-width);
+    margin:18px auto 0;
+    color:var(--muted);
+    text-align:center;
+    font-size:0.92rem;
+    padding:14px;
+}
+
+/* Pequenos ajustes tipográficos */
+h1,h2,h3{line-height:1.2}
+p{color:var(--muted); margin:6px 0}
+
+/* Responsividade */
+@media (max-width:820px){
+    body{padding:20px 12px}
+    header{padding:18px}
+    section{padding:16px}
+    input[type="text"], select, textarea{min-width:100%}
+    figure{flex-direction:column; align-items:flex-start}
+    form{flex-direction:column; align-items:stretch}
+}
+
+/* Mobile pequeno */
+@media (max-width:420px){
+    header h1{font-size:1.2rem}
+    button{width:100%}
+}
+
+/* Acessibilidade: foco visível */
+:focus{outline: 3px solid rgba(0,180,216,0.14); outline-offset:3px}
+
+/* Mensagens de validação (opcional) */
+.invalid{border-color:var(--danger); box-shadow:0 6px 18px rgba(239,68,68,0.12)}
+.success{border-color:var(--success)}
